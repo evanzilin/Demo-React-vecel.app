@@ -11,7 +11,7 @@ export default function Header() {
       </div>
 
       {/* Search Bar */}
-      <div className="flex-1 max-w-[540px] mx-auto">
+      <div className="flex-1 max-w-[540px]">
         <div className="relative">
           <div className="absolute left-3 top-1/2 -translate-y-1/2">
             <Search
@@ -36,16 +36,14 @@ export default function Header() {
       </div>
 
       {/* Right Side Actions */}
-      <div className="flex items-center gap-4 w-[240px] justify-end">
-        <button className="h-8 px-4 bg-purple rounded-lg text-dark text-sm font-semibold hover:opacity-90 transition-opacity">
+      <div className="flex items-center space-x-4">
+        <button className="bg-purple-500 text-sm font-medium text-white px-[17px] py-[6px] rounded-lg hover:bg-purple-600">
           Account plans
         </button>
-        <Bell className="w-5 h-5 text-white" strokeWidth={1.5} />
-        <button className="text-white text-sm font-medium hover:opacity-80">
-          Support
-        </button>
-        <div className="w-9 h-9 rounded-full bg-[#D9D9D9] flex items-center justify-center">
-          <span className="text-dark text-xs font-medium">KC</span>
+        <Bell className="w-4 h-4 text-white" />
+        <button className="text-white text-sm hover:text-gray-300">Support</button>
+        <div className="w-9 h-9 rounded-full text-sm bg-gray-300 flex items-center justify-center text-black">
+          KC
         </div>
       </div>
     </header>
