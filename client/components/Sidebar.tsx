@@ -41,8 +41,8 @@ function NavItem({
         active
           ? "bg-white"
           : indent
-            ? "bg-light hover:bg-white"
-            : "bg-light hover:bg-white"
+            ? "bg-light hover:bg-gray"
+            : "bg-white hover:bg-gray"
       } ${indent ? "" : ""}`}
     >
       <div className="w-5 h-5 flex-shrink-0 text-dark">{icon}</div>
@@ -86,8 +86,12 @@ function CollapsibleSection({
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full h-[42px] rounded-xl flex items-center gap-3 px-4 bg-[#C3C2C1] hover:bg-[#B8B7B6] transition-colors"
-      >
+        className={`w-full h-[42px] rounded-xl flex items-center gap-3 px-4 bg-[#C3C2C1] hover:bg-[#B8B7B6] transition-colors ${
+          (isOpen)
+          ? "bg-gray hover:bg-gray"
+          : "bg-white hover:bg-gray"
+        }`}
+        >
         <div className="w-5 h-5 flex-shrink-0 text-dark">{icon}</div>
         <span className="text-sm font-medium text-dark flex-1 text-left">
           {label}
@@ -158,7 +162,7 @@ export default function Sidebar() {
               label="Central"
               count={32}
               badge="purple"
-              defaultOpen={true}
+              defaultOpen={false}
               hasChevron={true}
             >
               <div className="ml-[42px] h-0 my-0" />

@@ -33,8 +33,8 @@ export default function Index() {
                 </span>
                   {/* Content Area */}  
                   <textarea
-                    className="w-full p-4 rounded-lg bg-gray-200 text-gray-800 x-lg:w-[1080px] md:h-[213px] mt-5"
-                    placeholder="Enter text here..."
+                    disabled
+                    className="cursor-pointer resize-none border-0 w-full p-4 rounded-lg bg-gray-200 text-gray-800 x-lg:w-[1080px] md:h-[213px] mt-5"
                     rows={10}
                   />
                   {/* Alternatively, using the Textarea component */}
