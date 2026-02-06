@@ -29,6 +29,7 @@ function NavItem({
   badge,
   active = false,
   indent = false,
+  classes = "",
   onClick,
 }: NavItemProps) {
   const badgeColor = badge === "purple" ? "bg-purple" : "bg-light-secondary";
@@ -36,13 +37,13 @@ function NavItem({
   return (
     <button
       onClick={onClick}
-      className={`w-full h-[42px] rounded-xl flex items-center gap-3 px-4 transition-colors ${
+      className={`${classes || "" } w-full h-[42px] rounded-xl flex items-center gap-3 px-4 transition-colors ${    
         active
           ? "bg-white"
           : indent
             ? "bg-light hover:bg-white"
             : "bg-light hover:bg-white"
-      } ${indent ? "pl-8" : ""}`}
+      } ${indent ? "" : ""}`}
     >
       <div className="w-5 h-5 flex-shrink-0 text-dark">{icon}</div>
       <span className="text-sm font-medium text-dark flex-1 text-left">
@@ -119,7 +120,7 @@ function CollapsibleSection({
 export default function Sidebar() {
   return (
     <aside className="fixed left-0 top-14 w-60 h-[calc(100vh-56px)] bg-light overflow-y-auto">
-      <div className="p-3 space-y-0">
+      <div className="h-full p-3 space-y-0 relative">
         {/* User Profile Card */}
         <div className="mb-4 h-16 rounded-xl bg-white flex items-center gap-3 px-4">
           <div className="w-9 h-9 rounded-full bg-purple flex items-center justify-center flex-shrink-0">
@@ -160,10 +161,10 @@ export default function Sidebar() {
               defaultOpen={true}
               hasChevron={true}
             >
-              <div className="ml-[42px] h-0 border-t border-[#D7D7D7] my-0" />
+              <div className="ml-[42px] h-0 my-0" />
             </CollapsibleSection>
 
-            <div className="ml-[42px] h-0 border-t border-[#D7D7D7] my-0" />
+            <div className="ml-[42px] h-0 my-0" />
             <NavItem
               icon={<div className="w-5 h-5" />}
               label="Unassigned"
@@ -172,7 +173,7 @@ export default function Sidebar() {
               indent={true}
             />
 
-            <div className="ml-[42px] h-0 border-t border-[#D7D7D7] my-0" />
+            <div className="ml-[42px] h-0 my-0" />
             <NavItem
               icon={<div className="w-5 h-5" />}
               label="Assigned to me"
@@ -181,7 +182,7 @@ export default function Sidebar() {
               indent={true}
             />
 
-            <div className="ml-[42px] h-0 border-t border-[#D7D7D7] my-0" />
+            <div className="ml-[42px] h-0 my-0" />
             <NavItem
               icon={<div className="w-5 h-5" />}
               label="Unread"
@@ -190,7 +191,7 @@ export default function Sidebar() {
               indent={true}
             />
 
-            <div className="ml-[42px] h-0 border-t border-[#D7D7D7] my-0" />
+            <div className="ml-[42px] h-0 my-0" />
             <NavItem
               icon={<div className="w-5 h-5" />}
               label="Trash"
@@ -229,7 +230,7 @@ export default function Sidebar() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-auto pt-[380px] space-y-0">
+        <div className="mt-auto absolute bottom-[16px] w-[216px] space-y-0">
           <NavItem icon={<Puzzle strokeWidth={1.5} />} label="Integrations" />
           <NavItem icon={<Settings strokeWidth={1.5} />} label="Settings" />
         </div>
