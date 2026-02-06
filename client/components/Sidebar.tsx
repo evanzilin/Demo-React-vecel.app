@@ -10,6 +10,7 @@ import {
   Send,
   Puzzle,
   Settings,
+  ChevronsUpDown,
 } from "lucide-react";
 
 interface NavItemProps {
@@ -136,7 +137,7 @@ export default function Sidebar() {
             </div>
             <div className="text-gray-text text-sm font-medium">Pro plan</div>
           </div>
-          <ChevronDown
+          <ChevronsUpDown
             className="w-5 h-5 text-dark flex-shrink-0"
             strokeWidth={1.5}
           />

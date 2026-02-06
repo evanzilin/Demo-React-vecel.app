@@ -12,9 +12,9 @@ export default function Index() {
       {/* Main Content Area */}
       <main className="ml-60 mt-14">
         {/* Top Bar */}
-          <div className="flex-1 px-6 align-middle flex justify-center">
+          <div className="flex-1 px-6 align-middle flex justify-center border-b border-[#F5F5F5] mb-3">
               <div className="w-full max-w-4xl">
-                <div className="h-16 border-b border-[#F5F5F5] flex items-center justify-between mb-3">
+                <div className="h-16  flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <h1 className="text-lg font-semibold text-dark">Lorem ipsum</h1>
                     <span className="md:block hidden text-sm font-medium text-gray-text">(12)</span>
@@ -31,16 +31,20 @@ export default function Index() {
                 <span className="md:hidden block dtext-sm font-medium text-dark my-3">
                     Lorem ipsum dolar sit amet
                 </span>
-                  {/* Content Area */}  
-                  <textarea
-                    disabled
-                    className="cursor-pointer resize-none border-0 w-full p-4 rounded-lg bg-gray-200 text-gray-800 x-lg:w-[1080px] md:h-[213px] mt-5"
-                    rows={10}
-                  />
-                  {/* Alternatively, using the Textarea component */}
-                  {/* <Textarea placeholder="Enter text here..." rows={10} /> */} 
               </div>
-          </div>  
+          </div> 
+          <div className="flex-1 px-6 align-middle flex justify-center">
+            <div className="w-full max-w-4xl">
+                {/* Content Area */}  
+                <textarea
+                  disabled
+                  className="cursor-pointer resize-none border-0 w-full p-4 rounded-lg bg-gray-200 text-gray-800 x-lg:w-[1080px] md:h-[213px] mt-5"
+                  rows={10}
+                />
+                {/* Alternatively, using the Textarea component */}
+                {/* <Textarea placeholder="Enter text here..." rows={10} /> */} 
+            </div> 
+          </div>
       </main>
     </div>
   );
