@@ -1,4 +1,4 @@
-import { Search, Bell } from 'lucide-react';
+import { Search, Bell } from "lucide-react";
 
 export default function Header() {
   return (
@@ -14,7 +14,10 @@ export default function Header() {
       <div className="flex-1 max-w-[540px] mx-auto">
         <div className="relative">
           <div className="absolute left-3 top-1/2 -translate-y-1/2">
-            <Search className="w-[18px] h-[18px] text-gray-text" strokeWidth={1.5} />
+            <Search
+              className="w-[18px] h-[18px] text-gray-text"
+              strokeWidth={1.5}
+            />
           </div>
           <input
             type="text"
