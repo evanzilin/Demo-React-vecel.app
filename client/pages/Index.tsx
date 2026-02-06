@@ -1,62 +1,34 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { Plus } from 'lucide-react';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <Sidebar />
+      
+      {/* Main Content Area */}
+      <main className="ml-60 mt-14">
+        {/* Top Bar */}
+        <div className="h-16 border-b border-[#F5F5F5] flex items-center justify-between px-8">
+          <div className="flex items-center gap-3">
+            <h1 className="text-lg font-semibold text-dark">Lorem ipsum</h1>
+            <span className="text-sm font-medium text-gray-text">(12)</span>
+            <span className="text-sm font-medium text-dark">Lorem ipsum dolar sit amet</span>
+          </div>
+          
+          <button className="h-[38px] px-4 bg-dark rounded-lg flex items-center gap-2 text-white text-sm font-semibold hover:opacity-90 transition-opacity">
+            <Plus className="w-5 h-5" strokeWidth={1.5} />
+            Lorem ipsum
+          </button>
+        </div>
+
+        {/* Content Area */}
+        <div className="p-8">
+          <div className="w-full max-w-[1080px] h-[213px] rounded-xl bg-[#D9D9D9]"></div>
+        </div>
+      </main>
     </div>
   );
 }
