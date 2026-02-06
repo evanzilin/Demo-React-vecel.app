@@ -1,12 +1,12 @@
-import { Search, Bell } from "lucide-react";
+import { Search, Bell, TicketCheck } from "lucide-react";
 
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 h-14 bg-dark flex items-center justify-between px-4 z-50">
       {/* Beta Badge */}
-      <div className="flex items-center gap-4 w-[240px]">
-        <div className="ml-[123px] h-[22px] px-[10px] bg-dark-secondary rounded-full flex items-center justify-center">
-          <span className="text-gray-text text-xs font-medium">beta</span>
+      <div className="items-center gap-4 md:flex mr-3  hidden">
+        <div className="md:ml-[123px] h-[22px] px-[10px] bg-dark-secondary rounded-full flex items-center justify-center">
+          <span className="text-gray-text text-xs  font-medium">beta</span>
         </div>
       </div>
 
@@ -36,10 +36,11 @@ export default function Header() {
       </div>
 
       {/* Right Side Actions */}
-      <div className="flex items-center space-x-4">
-        <button className="bg-purple-500 text-sm font-medium text-white px-[17px] py-[6px] rounded-lg hover:bg-purple-600">
-          Account plans
-        </button>
+      <div className="flex items-center space-x-4 ml-3">
+        <button className="flex justify-center items-center bg-purple-500 text-sm font-medium text-black px-[17px] py-[6px] rounded-lg hover:bg-purple-600">
+          <span className="md:block hidden">Account plans</span>
+          <TicketCheck className="md:hidden block ml-1 w-4 h-4 text-black" />
+          </button>
         <Bell className="w-4 h-4 text-white" />
         <button className="text-white text-sm hover:text-gray-300">Support</button>
         <div className="w-9 h-9 rounded-full text-sm bg-gray-300 flex items-center justify-center text-black">
